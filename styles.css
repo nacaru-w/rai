@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css?family=Comic+Sans+MS');
+@import url('https://fonts.googleapis.com/css?family=Impact');
+@import url('https://fonts.googleapis.com/css?family=Chewy');
+@import url('https://fonts.googleapis.com/css?family=Bangers');
+@import url('https://fonts.googleapis.com/css?family=Luckiest+Guy');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-size: 7em;
+    background: linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff, #00ffff);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s infinite;
+}
+
+.lo-siento,
+.pero,
+.tu-regalo,
+.aun-no-ha-llegado {
+    position: relative;
+    z-index: 2;
+}
+
+.lo-siento {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #FF0000;
+    /* Red color */
+    font-weight: bold;
+    animation: rotate 1s linear infinite, bounce 1s infinite alternate;
+
+}
+
+.pero {
+    font-family: 'Chewy', cursive;
+    color: #247024;
+    /* Green color */
+    font-style: italic;
+    animation: bounce 0.8s infinite alternate, spin 2s linear infinite;
+}
+
+.tu-regalo {
+    font-family: 'Bangers', cursive;
+    color: #0000FF;
+    /* Blue color */
+    text-decoration: underline;
+    animation: shake 0.5s infinite, colorChange 2s infinite alternate;
+}
+
+.aun-no-ha-llegado {
+    font-family: 'Luckiest Guy', cursive;
+    color: #FFD700;
+    /* Gold color */
+    font-weight: bold;
+    font-style: oblique;
+    text-decoration: overline;
+    animation: spin 1.5s linear infinite, bounce 0.5s infinite alternate, colorChange 1s infinite alternate;
+}
+
+
+.emoji {
+    position: absolute;
+    font-size: 5em;
+    opacity: 0;
+    animation: fly 8s linear infinite;
+}
+
+.emoji span {
+    position: absolute;
+    opacity: 0;
+    animation: fly 8s linear infinite;
+}
+
+.emoji1 {
+    top: 0;
+    left: 0;
+}
+
+.emoji2 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.emoji3 {
+    bottom: 0;
+    right: 0;
+    animation: driftAway 2s linear infinite;
+}
+
+.emoji4 {
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    animation: bounce 0.1s infinite alternate;
+}
+
+.emoji5 {
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    animation: bounceAndScale 0.2s infinite alternate;
+}
+
+.emoji6 {
+    animation: bounceAllOver 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(720deg);
+    }
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-80px);
+    }
+}
+
+@keyframes colorChange {
+
+    0%,
+    100% {
+        color: #a5a081;
+        /* Gold color */
+    }
+
+    50% {
+        color: #3d372a;
+        /* Orange color */
+    }
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes fly {
+    0% {
+        opacity: 0;
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(-200px) rotate(360deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(0) rotate(720deg);
+    }
+}
+
+@keyframes driftAway {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+
+    50% {
+        transform: translate(-500%, -500%);
+    }
+
+    100% {
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes bounceAndScale {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-20px) scale(1.4);
+    }
+}
+
+
+@keyframes bounceAllOver {
+
+    0%,
+    100% {
+        transform: translateY(0) translateX(0);
+    }
+
+    25% {
+        transform: translateY(-400px) translateX(-400px);
+    }
+
+    50% {
+        transform: translateY(0) translateX(600px);
+    }
+
+    75% {
+        transform: translateY(400px) translateX(400px);
+    }
+}
