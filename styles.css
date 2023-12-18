@@ -20,7 +20,9 @@
     font-size: 7em;
     background: linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff, #00ffff);
     background-size: 400% 400%;
-    animation: gradientAnimation 10s infinite;
+    animation: gradientAnimation 1.5s infinite;
+    position: relative;
+    overflow: hidden;
 }
 
 .lo-siento,
@@ -112,7 +114,7 @@
 }
 
 .emoji6 {
-    animation: bounceAllOver 2s infinite;
+    animation: bounceAllOver 1s infinite;
 }
 
 @keyframes bounce {
